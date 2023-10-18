@@ -1,0 +1,14 @@
+Atividades
+
+[ ] criar banco de dados da loja
+[ ] criar a estrutura de pastas do projeto
+[ ] adicionar o framework de css
+[ ] criar classe de conexão com o banco de dados
+[ ] criar uma classe da camada DAO (ProdutoDAO)
+[ ] criar a classe de modelo (Produto)
+[ ] criar o core (nucleo da aplicacao);
+     [ ] criar App.php(carrega os controles)
+     [ ] criar a classe controller (carrega os models)
+     [ ] criar o autoload (carrega os arquivos na memoria)
+[ ] criar o HomeController (carregar a index)
+[ ] criar o ProdutoController (controla as operacoes de produto)
