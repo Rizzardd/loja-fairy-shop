@@ -1,6 +1,4 @@
-<?php 
-getcwd();
-?>
+<?php getcwd();?>
 <?php include '../layout/menu.php'?>
 
 <!DOCTYPE html>
