@@ -1,5 +1,5 @@
 <?php
-
+namespace Application\core;
 class App
 {
     protected $controller = 'HomeController';
@@ -21,7 +21,7 @@ class App
     }
     public function parseUrl()
     {
-        $REQUEST_URI = explode('/', substr(filter_input(INPUT_SERVER, 'REQUEST_URI'), 1));
+       return $REQUEST_URI = explode('/', substr(filter_input(INPUT_SERVER, 'REQUEST_URI'), 1));
     }
 
     public function getControllerFromUrl($url)
@@ -36,7 +36,7 @@ class App
 
         }
 
-        require_once '../application/controllers/' . $this->controller . 'php';
+        require_once '../application/controllers/' . $this->controller . '.php';
         $this->controller = new $this->controller();
     }
     private function getMethodFromUrl($url)
