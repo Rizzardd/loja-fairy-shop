@@ -1,5 +1,5 @@
 <?php getcwd();?>
-<?php include '../layout/menu.php'?>
+<?php include '../Application/views/layout/menu.php'?>
 
 <!DOCTYPE html>
 <html lang="en">
