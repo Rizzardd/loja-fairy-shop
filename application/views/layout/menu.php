@@ -10,13 +10,13 @@
 <body>
     <ul class="nav">
         <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Active</a>
+            <a class="nav-link active" aria-current="/home/" href="#">Home</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
+            <a class="nav-link" href="/product/listar">Product</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
+            <a class="nav-link" href="#">Cart</a>
         </li>
         <li class="nav-item">
             <a class="nav-link disabled" aria-disabled="true">Disabled</a>
