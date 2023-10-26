@@ -14,7 +14,7 @@ class Controller
 
     public function view(string $view, $data = [])
     {
-        require '../Application/views/' . $view . '.php';
+        require '../application/views/' . $view . '.php';
     }
 
     
