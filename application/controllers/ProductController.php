@@ -9,6 +9,17 @@ class ProductController extends Controller
         $this->view('product/index');
     }
 
+
+    public function register()
+    {
+        $this->view('product/register');
+    }
+
+    public function store() {
+        $name = $_POST['name'];
+        $brand = $_POST['brand'];
+
+    }
 }
 
 ?>
