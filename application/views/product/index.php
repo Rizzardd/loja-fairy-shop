@@ -11,6 +11,9 @@ include $base . '\..\layout\menu.php';
     <title>Document</title>
 </head>
 <body>
-    <h1>eres corno!</h1>
+    <h1>product</h1>
+    <hr/>
+    <a href="/product/register">Add Product</a>
+
 </body>
 </html>
