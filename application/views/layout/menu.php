@@ -10,10 +10,10 @@
 <body>
     <ul class="nav">
         <li class="nav-item">
-            <a class="nav-link active" aria-current="/home/" href="#">Home</a>
+            <a class="nav-link active" aria-current="" href="/home/index">Home</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="/product/listar">Product</a>
+            <a class="nav-link" href="/product/index">Product</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="#">Cart</a>
