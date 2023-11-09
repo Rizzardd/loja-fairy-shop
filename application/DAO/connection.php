@@ -1,5 +1,5 @@
- <?php 
- 
+<?php 
+namespace application\DAO;
 
  class Connection {
     private $db_name ="loja";
@@ -16,7 +16,7 @@
     }
 
     public function getConnection () {
-        return $this->conn;
+        
         if($this->conn->connect_error) {
             die("a conexão falhou. ". $this->conn->connect_error);
         }
