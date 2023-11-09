@@ -10,7 +10,7 @@ class ProductDAO {
          $brand = $product->getBrand();
          $price = $product->getPrice();
         //monta o SQL
-        $SQL = "INSERT INTO product (cod, name, brand, price) values (null, $name, $brand, $price) ";
+        $SQL = "INSERT INTO products ( name, brand, price) values ( '$name', '$brand', '$price') ";
 
         if($conn->query($SQL) === TRUE){
             return true;

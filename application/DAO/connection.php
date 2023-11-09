@@ -2,9 +2,9 @@
 namespace application\DAO;
 
  class Connection {
-    private $db_name ="loja";
+    private $db_name ="fairy_shop";
     private $db_user = "root";
-    private $db_pass = "";
+    private $db_pass = "sucesso";
     private $db_host = "localhost";
 
     //carrega a conexão realizada com o banco 
