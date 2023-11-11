@@ -12,7 +12,7 @@ namespace application\DAO;
     private $conn;
 
     public function __construct() {
-        $this->conn = new \mysqli($this->db_host, $this->db_user, $this->db_pass, $this->db_name);
+        $this->conn = new \mysqli($this->db_host, $this->db_user, $this->db_pass, $this->db_name, 3306);
     }
 
     public function getConnection () {
