@@ -1,14 +1,27 @@
 Atividades
 
-[ ] criar banco de dados da loja
-[ ] criar a estrutura de pastas do projeto
-[ ] adicionar o framework de css
-[ ] criar classe de conexão com o banco de dados
-[ ] criar uma classe da camada DAO (ProdutoDAO)
-[ ] criar a classe de modelo (Produto)
-[ ] criar o core (nucleo da aplicacao);
-     [ ] criar App.php(carrega os controles)
-     [ ] criar a classe controller (carrega os models)
-     [ ] criar o autoload (carrega os arquivos na memoria)
-[ ] criar o HomeController (carregar a index)
-[ ] criar o ProdutoController (controla as operacoes de produto)
+[x] criar banco de dados da loja
+[x] criar a estrutura de pastas do projeto
+[x] adicionar o framework de css
+[x] criar classe de conexão com o banco de dados
+[] criar uma classe da camada DAO (ProdutoDAO)
+[x] criar a classe de modelo (Produto)
+[x] criar o core (nucleo da aplicacao);
+     [x] criar App.php(carrega os controles)
+     [x] criar a classe controller (carrega os models)
+     [x] criar o autoload (carrega os arquivos na memoria)
+[x] criar o HomeController (carregar a index)
+[x] criar o ProdutoController (controla as operacoes de produto)
+[x] criar menu (Layout)
+[x] criar views de Produto
+   [x]cadastrar produtos
+   [x] Index Produto (listar produto)
+   [] editar produto
+[] funcionalidade excluir produto [0.5]
+[] cadastrar usuario [0.5]
+[] pesquisar usuario [0.5]
+[] alterar usuario [0.5]
+[] excluir usuario [0.5]
+[] efetuar login/logout do usuario [1.0] pontos
+[] listar produtos na pagina inicial [1.0] pontos
+[] listar produtos com imagem [2.0] pontos
