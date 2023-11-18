@@ -25,3 +25,5 @@ Atividades
 [] efetuar login/logout do usuario [1.0] pontos
 [] listar produtos na pagina inicial [1.0] pontos
 [] listar produtos com imagem [2.0] pontos
+[] adicionar o modal de confirmação de exclusão no projeto [1.0]
+[] refatorar o produtoDAO com PrepareStatement ou PDO[1.0]

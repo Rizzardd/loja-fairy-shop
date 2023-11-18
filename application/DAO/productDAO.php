@@ -20,7 +20,7 @@ class ProductDAO
         if ($conn->query($SQL) === TRUE) {
             return true;
         } else {
-            echo "Error" . $SQL . "<br/>. $conn->error";
+            echo "Error: " . $SQL . "<br/>. $conn->error";
             return false;
         }
     }
@@ -60,11 +60,35 @@ class ProductDAO
     //update
     public function update($product)
     {
+
+        //criar conexão
+        $connection = new Connection();
+        $conn = $connection->getConnection();
+
+        //pega os dados
+        $cod = $product->getCod();
+        $name = $product->getName();
+        $brand = $product->getBrand();
+        $price = $product->getPrice();
+
+        $SQL = "UPDATE products SET name = '$name', brand = '$brand', price = '$price' WHERE  cod =" . $cod;
+
+        if($conn->query($SQL) === TRUE) {
+
+            return true;
+        }
+        print_r("Error: " . $SQL . "<br/>. $conn->error");
+        return $product;
     }
 
     //delete
     public function delete($id)
     {
+        $connection = new Connection();
+        $conn = $connection->getConnection();
+
+        $SQL = "DELETE FROM products WHERE cod =". $id;
+
     }
 
 }

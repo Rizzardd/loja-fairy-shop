@@ -37,6 +37,43 @@ class ProductController extends Controller
         // 2 - Mostrar a view
         $this->view('product/edit', ['product'=> $product]);
     }
+
+    //recebe os dados
+    public function update()  {
+        $cod = filter_input(INPUT_POST, 'cod');
+        $name = filter_input(INPUT_POST,'name');
+        $brand = filter_input(INPUT_POST,'brand');
+        $price = filter_input(INPUT_POST,'price');
+
+        //cria o objeto 
+        $product = new Product($name, $brand, $price);
+        $product->setCod($cod);
+
+        //cria o produto dao
+        $productDAO = new ProductDAO();
+        $updatedProduct = $productDAO->update($product);
+
+        if($updatedProduct){
+          $msg = 'success';
+        } else {
+            $msg = 'Error in edition';
+        }
+
+        $this->view('product/update', ["msg" =>  $msg, "product"=> $product]);
+    }
+
+    public function delete() {
+        $cod = filter_input(INPUT_POST,"cod");
+        $productDAO = new ProductDAO();
+        if($productDAO = delete($cod)) {
+            $msg = "success";
+        } else {
+            $msg = "Error in delete.";
+        }
+
+        $products = $productDAO->findAll();
+        $this->view("product/index", ["msg"=> $msg,"product"=> $products]);
+    }
 }
 
 ?>

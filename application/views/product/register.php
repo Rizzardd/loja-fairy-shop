@@ -1,3 +1,15 @@
+<?php
+$base = __DIR__;
+include $base .'\..\layout\menu.php';
+//debug_print_backtrace();
+?>
+
+<?php 
+if(isset($data['msg'])){
+    echo "Success";
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
