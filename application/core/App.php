@@ -21,7 +21,7 @@ class App
     }
     public function parseUrl()
     {
-       return $REQUEST_URI = explode('/', substr(filter_input(INPUT_SERVER, 'REQUEST_URI'), 1));
+        return $REQUEST_URI = explode('/', substr(filter_input(INPUT_SERVER, 'REQUEST_URI'), 1));
     }
 
     public function getControllerFromUrl($url)

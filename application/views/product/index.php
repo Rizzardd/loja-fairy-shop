@@ -58,7 +58,7 @@ include $base . '\..\layout\menu.php';
                         </a>
                         <span>
                             <form action="/product/delete" method="POST">
-                                <input type="hidden" name="cod" value="<?=?>">
+                            <input type="hidden" name="cod" value="<?=?>">
                                 <input type="button" value="X">
                             </form>
                         </span>
