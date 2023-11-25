@@ -65,7 +65,7 @@ class ProductController extends Controller
     public function delete() {
         $cod = filter_input(INPUT_POST,"cod");
         $productDAO = new ProductDAO();
-        if($productDAO = delete($cod)) {
+        if($productDAO->delete($cod)) {
             $msg = "success";
         } else {
             $msg = "Error in delete.";
