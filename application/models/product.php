@@ -1,16 +1,18 @@
 <?php 
 namespace application\models;
+
 class Product {
     private $cod;
     private $name;
     private $brand;
     private $price;
+    private $file_location;
 
-
-    public function __construct($name, $brand, $price){
+    public function __construct($name, $brand, $price, $file_location = null){
         $this->name = $name;
         $this->brand = $brand;
         $this->price = $price;
+        $this->file_location = $file_location;
     }
 
     public function setCod($cod) {
@@ -44,6 +46,13 @@ class Product {
     public function setPrice($price){
         $this->price = $price;
     }
-}
 
+    public function getFileLocation() {
+        return $this->file_location;
+    }
+
+    public function setFileLocation($file_location) {
+        $this->file_location = $file_location;
+    }
+}
 ?>

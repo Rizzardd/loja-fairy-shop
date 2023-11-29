@@ -16,10 +16,32 @@ include $base . '\..\layout\menu.php';
 </head>
 
 <body>
-    <div>
-        
-a
+
+    <div class="cardContainer">
+        <?php
+        foreach ($data["products"] as $product) {
+            ?>
+            <div class="productCard">
+                <?php if ($product->getFileLocation()): ?>
+                    <img src="<?= $product->getFileLocation() ?>" alt="<?= $product->getName() ?>" class="productImage">
+                <?php endif;
+                ?>
+                <h3>
+                    <?= $product->getName() ?>
+                </h3>
+                <p>Brand:
+                    <?= $product->getBrand() ?>
+                </p>
+                <p>Price:
+                    <?= $product->getPrice() ?>
+                </p>
+            </div>
+            <?php
+        }
+        ?>
     </div>
+
+
 </body>
 
 </html>

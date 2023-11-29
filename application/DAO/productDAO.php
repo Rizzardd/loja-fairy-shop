@@ -14,10 +14,11 @@ class ProductDAO
         $name = $product->getName();
         $brand = $product->getBrand();
         $price = $product->getPrice();
+        $file_location = $product->getFileLocation();
 
-        $SQL = "INSERT INTO products (name, brand, price) VALUES (?, ?, ?)";
+        $SQL = "INSERT INTO products (name, brand, price, file_location) VALUES (?, ?, ?, ?)";
         $stmt = $conn->prepare($SQL);
-        $stmt->bind_param("ssd", $name, $brand, $price);
+        $stmt->bind_param("ssds", $name, $brand, $price, $file_location);
 
         if ($stmt->execute()) {
             return true;
@@ -40,6 +41,7 @@ class ProductDAO
         while ($row = $result->fetch_assoc()) {
             $product = new Product($row["name"], $row["brand"], $row["price"]);
             $product->setCod($row["cod"]);
+            $product->setFileLocation($row["file_location"]);
             array_push($products, $product);
         }
 
@@ -61,6 +63,7 @@ class ProductDAO
 
         $product = new Product($row["name"], $row["brand"], $row["price"]);
         $product->setCod($row["cod"]);
+        $product->setFileLocation($row["file_location"]);
 
         return $product;
     }
@@ -75,10 +78,11 @@ class ProductDAO
         $name = $product->getName();
         $brand = $product->getBrand();
         $price = $product->getPrice();
+        $file_location = $product->getFileLocation();
 
-        $SQL = "UPDATE products SET name = ?, brand = ?, price = ? WHERE cod = ?";
+        $SQL = "UPDATE products SET name = ?, brand = ?, price = ?, file_location = ? WHERE cod = ?";
         $stmt = $conn->prepare($SQL);
-        $stmt->bind_param("ssdi", $name, $brand, $price, $cod);
+        $stmt->bind_param("ssdsi", $name, $brand, $price, $file_location, $cod);
 
         if ($stmt->execute()) {
             return true;

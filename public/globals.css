@@ -79,3 +79,21 @@ h5 {
 .bg-header {
   background-color: rgb(225, 100, 45) !important;
 }
+
+.productCard {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 16px;
+  width: 200px;
+  text-align: center;
+}
+
+.productImage {
+  max-width: 100%;
+  height: auto;
+}
+
+.cardContainer{
+  display: flex;
+}

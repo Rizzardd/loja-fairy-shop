@@ -21,13 +21,15 @@ if(isset($data['msg'])){
 </head>
 
 <body>
-    <form action="/product/store" method="POST">
+    <form action="/product/store" method="POST" enctype="multipart/form-data">
         <label for="">Product Name</label>
         <input type="text" name="name" id="product_name">
         <label for="">Brand Name</label>
         <input type="text" name="brand" id="product_brand"> 
         <label for="">Price</label>
         <input type="text" name="price" id="product_price">
+        <label for="product_image">Image:</label>
+        <input type="file" name="product_image">
         <input type="submit" value="register">
     </form>
 </body>
