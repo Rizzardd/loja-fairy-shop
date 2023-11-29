@@ -5,92 +5,105 @@ use application\models\Product;
 
 class ProductDAO
 {
-    //Create
+    // Create
     public function save($product)
     {
-        $connection = new Connection(); //instancia o objeto
-        $conn = $connection->getConnection(); //recebe a conexão
-        //receber os dados da outra camada
+        $connection = new Connection();
+        $conn = $connection->getConnection();
+
         $name = $product->getName();
         $brand = $product->getBrand();
         $price = $product->getPrice();
-        //monta o SQL
-        $SQL = "INSERT INTO products ( name, brand, price) values ( '$name', '$brand', '$price') ";
-        // executa a operação
-        if ($conn->query($SQL) === TRUE) {
+
+        $SQL = "INSERT INTO products (name, brand, price) VALUES (?, ?, ?)";
+        $stmt = $conn->prepare($SQL);
+        $stmt->bind_param("ssd", $name, $brand, $price);
+
+        if ($stmt->execute()) {
             return true;
         } else {
-            echo "Error: " . $SQL . "<br/>. $conn->error";
+            echo "Error: " . $stmt->error;
             return false;
         }
     }
+
+    // Read
     public function findAll()
     {
-        // 1- instancia a conexao
         $connection = new Connection();
-        // 2- recebe a conexão
         $conn = $connection->getConnection();
+
         $SQL = "SELECT * FROM products";
-        //faz a consulta no banco
         $result = $conn->query($SQL);
 
         $products = [];
         while ($row = $result->fetch_assoc()) {
-            $product = new Product($row['name'], $row['brand'], $row['price']);
-            $product->setCod($row['cod']);
+            $product = new Product($row["name"], $row["brand"], $row["price"]);
+            $product->setCod($row["cod"]);
             array_push($products, $product);
         }
-        return $products;
 
+        return $products;
     }
 
-    //Retrieve
     public function findById($id)
     {
         $connection = new Connection();
         $conn = $connection->getConnection();
-        $SQL = "SELECT * FROM products WHERE cod =" . $id;
-        $result = $conn->query($SQL);
+
+        $SQL = "SELECT * FROM products WHERE cod = ?";
+        $stmt = $conn->prepare($SQL);
+        $stmt->bind_param("i", $id);
+        $stmt->execute();
+
+        $result = $stmt->get_result();
         $row = $result->fetch_assoc();
+
         $product = new Product($row["name"], $row["brand"], $row["price"]);
         $product->setCod($row["cod"]);
+
         return $product;
     }
 
-    //update
+    // Update
     public function update($product)
     {
-
-        //criar conexão
         $connection = new Connection();
         $conn = $connection->getConnection();
 
-        //pega os dados
         $cod = $product->getCod();
         $name = $product->getName();
         $brand = $product->getBrand();
         $price = $product->getPrice();
 
-        $SQL = "UPDATE products SET name = '$name', brand = '$brand', price = '$price' WHERE  cod =" . $cod;
+        $SQL = "UPDATE products SET name = ?, brand = ?, price = ? WHERE cod = ?";
+        $stmt = $conn->prepare($SQL);
+        $stmt->bind_param("ssdi", $name, $brand, $price, $cod);
 
-        if($conn->query($SQL) === TRUE) {
-
+        if ($stmt->execute()) {
             return true;
+        } else {
+            echo "Error: " . $stmt->error;
+            return false;
         }
-        print_r("Error: " . $SQL . "<br/>. $conn->error");
-        return $product;
     }
 
-    //delete
+    // Delete
     public function delete($id)
     {
         $connection = new Connection();
         $conn = $connection->getConnection();
 
-        $SQL = "DELETE FROM products WHERE cod =". $id;
+        $SQL = "DELETE FROM products WHERE cod = ?";
+        $stmt = $conn->prepare($SQL);
+        $stmt->bind_param("i", $id);
 
+        if ($stmt->execute()) {
+            return true;
+        } else {
+            echo "Error: " . $stmt->error;
+            return false;
+        }
     }
-
 }
-
 ?>

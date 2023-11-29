@@ -39,40 +39,29 @@ class ProductController extends Controller
     }
 
     //recebe os dados
-    public function update()  {
-        $cod = filter_input(INPUT_POST, 'cod');
-        $name = filter_input(INPUT_POST,'name');
-        $brand = filter_input(INPUT_POST,'brand');
-        $price = filter_input(INPUT_POST,'price');
-
-        //cria o objeto 
-        $product = new Product($name, $brand, $price);
+    public function update()
+    {
+        $cod = $_POST["cod"];
+        $name = $_POST["name"];
+        $brand = $_POST["brand"];
+        $price = $_POST["price"];
+        $product = new product($name, $brand, $price);
         $product->setCod($cod);
 
-        //cria o produto dao
         $productDAO = new ProductDAO();
-        $updatedProduct = $productDAO->update($product);
+        $productDAO->update($product);
 
-        if($updatedProduct){
-          $msg = 'success';
-        } else {
-            $msg = 'Error in edition';
-        }
-
-        $this->view('product/update', ["msg" =>  $msg, "product"=> $product]);
+        
+        header("Location: /product/index");
     }
 
-    public function delete() {
-        $cod = filter_input(INPUT_POST,"cod");
+    public function delete()
+    {
+        $cod = $_POST["productCode"];
         $productDAO = new ProductDAO();
-        if($productDAO->delete($cod)) {
-            $msg = "success";
-        } else {
-            $msg = "Error in delete.";
-        }
-
-        $products = $productDAO->findAll();
-        $this->view("product/index", ["msg"=> $msg,"product"=> $products]);
+        $productDAO->delete($cod);
+        header("Location: /product/index");
+        exit();
     }
 }
 

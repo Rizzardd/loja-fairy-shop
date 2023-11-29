@@ -1,4 +1,4 @@
-<?php 
+<?php
 $base = __DIR__;
 include $base . '\..\layout\menu.php';
 //debug_print_backtrace();
@@ -6,6 +6,7 @@ include $base . '\..\layout\menu.php';
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,7 +14,12 @@ include $base . '\..\layout\menu.php';
     <title>Document</title>
 
 </head>
+
 <body>
-<h1>a</h1>
+    <div>
+        
+a
+    </div>
 </body>
+
 </html>

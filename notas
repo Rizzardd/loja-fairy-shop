@@ -4,7 +4,7 @@ Atividades
 [x] criar a estrutura de pastas do projeto
 [x] adicionar o framework de css
 [x] criar classe de conexão com o banco de dados
-[] criar uma classe da camada DAO (ProdutoDAO)
+[X] criar uma classe da camada DAO (ProdutoDAO)
 [x] criar a classe de modelo (Produto)
 [x] criar o core (nucleo da aplicacao);
      [x] criar App.php(carrega os controles)
@@ -16,8 +16,8 @@ Atividades
 [x] criar views de Produto
    [x]cadastrar produtos
    [x] Index Produto (listar produto)
-   [] editar produto
-[] funcionalidade excluir produto [0.5]
+   [X] editar produto
+[X] funcionalidade excluir produto [0.5]
 [] cadastrar usuario [0.5]
 [] pesquisar usuario [0.5]
 [] alterar usuario [0.5]
@@ -25,5 +25,5 @@ Atividades
 [] efetuar login/logout do usuario [1.0] pontos
 [] listar produtos na pagina inicial [1.0] pontos
 [] listar produtos com imagem [2.0] pontos
-[] adicionar o modal de confirmação de exclusão no projeto [1.0]
-[] refatorar o produtoDAO com PrepareStatement ou PDO[1.0]
+[X] adicionar o modal de confirmação de exclusão no projeto [1.0]
+[X] refatorar o produtoDAO com PrepareStatement ou PDO[1.0]

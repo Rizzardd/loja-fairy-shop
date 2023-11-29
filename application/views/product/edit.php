@@ -21,9 +21,9 @@ $product = $data['product'];
 </head>
 
 <body>
-    <form method="POST">
+    <form method="POST" action="/product/update">
         <div class="mb-3">
-            <input type="hidden" name="cod"  value="<?= $product->getCod ?>" name="cod">
+            <input type="hidden" name="cod"  value="<?= $product->getCod() ?>" name="cod">
         </div>
         <div class="mb-3">
             <label for="#" class="form-label">Name</label>

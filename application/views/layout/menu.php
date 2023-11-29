@@ -9,7 +9,7 @@
 
 <body>
 
-    <header class="p-3 mb-3 border-bottom">
+    <header class="p-3 mb-3 border-bottom bg-header">
         <div class="container">
             <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
                 <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
@@ -18,7 +18,7 @@
                     </svg>
                 </a>
 
-                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0 fs-6 fw-semibold ">
                     <li><a href="/home/index" class="nav-link px-2 link-secondary">Home</a></li>
                     <li><a href="#" class="nav-link px-2 link-dark">Inventory</a></li>
                     <li><a href="#" class="nav-link px-2 link-dark">Customers</a></li>
@@ -43,11 +43,12 @@
                         </li>
                         <li><a class="dropdown-item" href="#">Sign Out</a></li>
                         <li><a class="dropdown-item" href="#">Sign In</a></li>
-                        <li><a class="dropdown-item" href="user/register">Sign Up</a></li>
+                        <li><a class="dropdown-item" href="/user/register">Sign Up</a></li>
                     </ul>
                 </div>
             </div>
         </div>
     </header>
+    
 </body>
 </html>
