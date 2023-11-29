@@ -4,7 +4,7 @@ namespace application\DAO;
  class Connection {
     private $db_name ="fairy_shop";
     private $db_user = "root";
-    private $db_pass = "teste123";
+    private $db_pass = "sucesso";
     private $db_host = "localhost";
 
     //carrega a conexão realizada com o banco 
@@ -23,6 +23,8 @@ namespace application\DAO;
         return $this->conn;
     }
     
+
+    public function connect(){}
     public function disconnect(){
         $this->conn->close();
     }

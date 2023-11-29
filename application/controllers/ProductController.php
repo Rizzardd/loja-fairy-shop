@@ -34,7 +34,6 @@ class ProductController extends Controller
 
         $productDAO = new ProductDAO();
         $productDAO->save($product);
-        $this->view('product/register');
         header("Location: /product/index");
 
     }

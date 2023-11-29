@@ -21,8 +21,6 @@
 
                 <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0 fs-6 fw-semibold ">
                     <li><a href="/home/index" class="nav-link px-2 link-secondary">Home</a></li>
-                    <li><a href="#" class="nav-link px-2 link-dark">Inventory</a></li>
-                    <li><a href="#" class="nav-link px-2 link-dark">Customers</a></li>
                     <li><a href="/product/index" class="nav-link px-2 link-dark">Products</a></li>
                 </ul>
 

@@ -25,8 +25,7 @@ include $base . '\..\layout\menu.php';
             <div class="d-flex justify-content-center row">
                 <div class="col-md-10">
                     <div class="row p-2 bg-white border rounded">
-                        <div class="col-md-3 mt-1"><img class="img-fluid img-responsive rounded product-image"
-                                src="https://i.imgur.com/QpjAiHq.jpg"></div>
+                        
                         <div class="col-md-6 mt-1">
                             <h5>
                                 <?= $product->getName() ?>
