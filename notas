@@ -18,11 +18,11 @@ Atividades
    [x] Index Produto (listar produto)
    [X] editar produto
 [X] funcionalidade excluir produto [0.5]
-[] cadastrar usuario [0.5]
-[] pesquisar usuario [0.5]
-[] alterar usuario [0.5]
-[] excluir usuario [0.5]
-[] efetuar login/logout do usuario [1.0] pontos
+[X] cadastrar usuario [0.5]
+[X] pesquisar usuario [0.5]
+[X] alterar usuario [0.5]
+[X] excluir usuario [0.5]
+[X] efetuar login/logout do usuario [1.0] pontos
 [] listar produtos na pagina inicial [1.0] pontos
 [] listar produtos com imagem [2.0] pontos
 [X] adicionar o modal de confirmação de exclusão no projeto [1.0]

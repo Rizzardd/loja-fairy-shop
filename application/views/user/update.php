@@ -4,10 +4,10 @@ include $base .'\..\layout\menu.php';
 //debug_print_backtrace();
 ?>
 
-<?php 
-if(isset($data['msg'])){
-    echo "Success";
-}
+<?php
+$cod = $_SESSION['user_id'];
+$name = $data["user"]->getName();
+$email = $data["user"]->getEmail();
 ?>
 
 <!DOCTYPE html>
@@ -29,36 +29,34 @@ if(isset($data['msg'])){
         <div class="col-12 col-md-9 col-lg-7 col-xl-6">
           <div class="card h-25" style="border-radius: 15px;">
             <div class="card-body p-5">
-              <h2 class="text-uppercase text-center mb-5">Create an account</h2>
+              <h2 class="text-uppercase text-center mb-5">Update your account</h2>
 
-              <form action="/user/sendSignup" method="POST">
+              <form action="/user/submitUpdate" method="POST">
 
                 <div class="form-outline mb-4">
-                  <input type="text" name="name" id="form3Example1cg" class="form-control form-control-lg" />
+                  <input type="text" value="<?= $name ?>" name="name" id="form3Example1cg" class="form-control form-control-lg" />
                   <label class="form-label" for="form3Example1cg">Your Name</label>
                 </div>
 
                 <div class="form-outline mb-4">
-                  <input type="email" id="form3Example3cg" name="email" class="form-control form-control-lg" />
+                  <input type="email" value="<?= $email ?>" id="form3Example3cg" name="email" class="form-control form-control-lg" />
                   <label class="form-label" for="form3Example3cg">Your Email</label>
                 </div>
 
                 <div class="form-outline mb-4">
-                  <input type="password" id="form3Example4cg" name="password" class="form-control form-control-lg" />
-                  <label class="form-label" for="form3Example4cg" >Password</label>
+                  <input type="password" id="form3Example4cg" name="old_password" class="form-control form-control-lg" />
+                  <label class="form-label" for="form3Example4cg" >Old Password</label>
                 </div>
 
                 <div class="form-outline mb-4">
-                  <input type="password" id="form3Example4cdg" name="rePassword" class="form-control form-control-lg" />
-                  <label class="form-label" for="form3Example4cdg" >Repeat your password</label>
+                  <input type="password" id="form3Example4cg" name="password" class="form-control form-control-lg" />
+                  <label class="form-label" for="form3Example4cg" >New Password</label>
                 </div>
 
+                <input type="hidden" name="cod" value="<?= $cod ?>">
                 <div class="d-flex justify-content-center">
-                  <input type="submit"  class="btn btn-success btn-block btn-lg gradient-custom-4 text-body" value="Register">
+                  <input type="submit"  class="btn btn-success btn-block btn-lg gradient-custom-4 text-body" value="Update">
                 </div>
-
-                <p class="text-center text-muted mt-5 mb-0">Already have an account? <a href="/user/login"
-                    class="fw-bold text-body"><u>Login here</u></a></p>
 
               </form>
 

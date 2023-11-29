@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,27 +29,33 @@
                 <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
                     <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
                 </form>
-
-                <div class="dropdown text-end">
-                    <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
-                    </a>
-                    <ul class="dropdown-menu text-small">
-                        <li><a class="dropdown-item" href="#">New project...</a></li>
-                        <li><a class="dropdown-item" href="#">Settings</a></li>
-                        <li><a class="dropdown-item" href="#">Profile</a></li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-                        <li><a class="dropdown-item" href="#">Sign Out</a></li>
-                        <li><a class="dropdown-item" href="#">Sign In</a></li>
-                        <li><a class="dropdown-item" href="/user/register">Sign Up</a></li>
+                <?php if (!isset($_SESSION["user_email"])) { ?>
+                    <a class="btn mr-2 btn-primary" href="/user/login/">Sign In</a>
+                    <a class="btn btn-secondary" href="/user/register">Sign Up</a>
+                <?php } else { ?>
+                    <div class="dropdown text-end">
+                        <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
+                            <span><?= $_SESSION['user_name']?></span>
+                        </a>
+                        <ul class="dropdown-menu text-small">
+                            <li><a class="dropdown-item" href="/user/index/">Settings</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li>
+                                <form action="/user/signout" method="post">
+                                    <button class="dropdown-item" type="submit" class="button">Sign Out</button>
+                                </form>
+                            </li>
+                        <?php } ?>
                     </ul>
                 </div>
             </div>
         </div>
     </header>
-    
+
 </body>
+
 </html>

@@ -23,8 +23,6 @@ namespace application\DAO;
         return $this->conn;
     }
     
-
-    public function connect(){}
     public function disconnect(){
         $this->conn->close();
     }

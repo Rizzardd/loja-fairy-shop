@@ -23,7 +23,7 @@
 
 <body>
     <?php
-
+    session_start();
     require_once '../Application/core/autoload.php';
     use Application\core\App;
     use Application\core\Controller;
